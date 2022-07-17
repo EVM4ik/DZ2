@@ -150,7 +150,7 @@ public class Car implements CarInterface, Comparable<Car> {
 
     @Override
     public void run() {
-        System.out.println("RUN");
+        System.out.println("GO");
 
     }
 

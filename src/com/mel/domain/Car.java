@@ -1,6 +1,8 @@
-package domain;
+package com.mel.domain;
 
-public class Car {
+import com.mel.service.CarInterface;
+
+public class Car implements CarInterface, Comparable<Car> {
 
     private String manufacturing;
 
@@ -32,6 +34,7 @@ public class Car {
         this.engineVolume = engineVolume;
         this.enginePower = enginePower;
     }
+
 
     public String getManufacturing() {
         return manufacturing;
@@ -144,4 +147,21 @@ public class Car {
                 ", enginePower=" + enginePower +
                 '}';
     }
+
+    @Override
+    public void run() {
+        System.out.println("RUN");
+
+    }
+
+    @Override
+    public int move() {
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return this.getYearOfIssue() - o.yearOfIssue;
+    }
+
 }
